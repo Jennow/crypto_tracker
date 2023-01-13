@@ -54,14 +54,17 @@ function App() {
 	const searchCrypto = () => {
 		const value = searchInputRef.current.value;
 		fetch(
-			`https://min-api.cryptocompare.com/data/price?fsym=${value}&tsyms=${fiatCurrency}&api_key=${process.env.REACT_APP_CRYPTO_API_KEY}`
+			`https://min-api.cryptocompare.com/data/price?fsym=${value.toUpperCase()}&tsyms=${fiatCurrency}&api_key=${
+				process.env.REACT_APP_CRYPTO_API_KEY
+			}`
 		).then(async (response) => {
 			const resJSON = await response.json();
 			if (resJSON.Response) {
 				setSearchCryptoError(true);
 			} else {
 				setSearchCryptoError(false);
-				updateAmount(value, 0);
+				searchInputRef.current.value = '';
+				updateAmount(value.toUpperCase(), 0);
 			}
 		});
 	};
