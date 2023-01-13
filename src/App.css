@@ -1,38 +1,152 @@
+body {
+	background-color: rgb(45, 79, 108);
+}
+
 .App {
-  text-align: center;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+div {
+	font-weight: 200;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+	font-weight: 100;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Conatiner {
+	max-width: 900px;
+	width: 100%;
+	margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.Search {
+	display: flex;
+	gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Search input {
+	padding: 1rem;
+	box-sizing: border-box;
+	background-color: white;
+	color: black;
+	border-radius: 50px;
+	font-size: 16px;
+	overflow: hidden;
+}
+
+.Search button {
+	cursor: pointer;
+	background-color: rgb(0, 205, 120);
+	border: none;
+	border-radius: 50px;
+	padding: 1rem;
+	min-width: 150px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.SelectFiat {
+	display: flex;
+	justify-content: end;
+	margin: 2rem 0 0;
+}
+
+.SelectFiat select {
+	background-color: rgb(0, 0, 0, 0.5);
+	color: white;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	border: 0;
+	appearance: none;
+	min-width: 70px;
+	text-align: center;
+	cursor: pointer;
+}
+
+select:hover,
+input:hover,
+button:hover {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.ListHeader,
+.Sums {
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.ListItem {
+	display: flex;
+	justify-content: space-between;
+	/* border-bottom: 1px solid white; */
+	background-color: rgb(0, 0, 0, 0.5);
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 0.5rem;
+	gap: 1rem;
+}
+
+.List > div > div {
+	flex: 2;
+}
+
+.List .Name {
+	text-align: left;
+	/* flex-grow: 2; */
+}
+
+.List .Product {
+	text-align: right;
+}
+
+.List .Amount {
+	flex: 1;
+	min-width: 80px;
+}
+
+input {
+	color: white;
+	background-color: transparent;
+	width: 100%;
+	background-color: rgb(0, 0, 0, 0.5);
+	padding: 0.5rem;
+	border-radius: 1rem;
+	border: none;
+}
+
+.Sums {
+	background-color: rgb(0, 205, 120);
+}
+
+.Sums .Product,
+.Sums .Amount {
+	font-weight: 600;
+	font-size: 1.6rem;
+}
+
+@media screen and (max-width: 500px) {
+	.Search {
+		flex-direction: column;
+	}
+	.Sums .Product,
+	.Sums .Amount {
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.List .Amount {
+		min-width: 50px;
+	}
 }
